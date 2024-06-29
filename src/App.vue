@@ -1,4 +1,6 @@
 <template>
+  <InputExample />
+
   <div @click="isModalOpen = false" class="black-bg" v-if="isModalOpen">
     <div class="white-bg">
       <h4>상세페이지임</h4>
@@ -21,7 +23,9 @@
 </template>
 
 <script>
+// import products from "./data/products";
 import products from "../public/data/products";
+import InputExample from "./components/InputExample.vue";
 
 export default {
   name: "App",
@@ -42,7 +46,9 @@ export default {
     },
   },
 
-  components: {},
+  components: {
+    InputExample,
+  },
 };
 </script>
 
