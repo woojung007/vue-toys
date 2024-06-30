@@ -1,13 +1,27 @@
 <template>
-  <InputExample />
+  <div @click="isModalOpen = false" class="black-bg" v-if="isModalOpen">
+    <div class="white-bg">
+      <h4>상세페이지임</h4>
+      <p>상세페이지 내용임</p>
+      <button @click="isModalOpen = false">닫기</button>
+    </div>
+  </div>
 
-  <VueDongsan />
+  <div class="menu">
+    <a v-for="(menu, index) in menus" :key="index" href="">{{ menu }}</a>
+  </div>
+
+  <div class="product" v-for="(product, index) in products" :key="index">
+    <img class="room-img" :src="products[index].image" />
+    <h4 @click="isModalOpen = true">{{ product.title }}</h4>
+    <p>{{ product.price }}원</p>
+    <button @click="increase(index)">허위매물신고</button>
+    <span>신고 수 : {{ product.report }}</span>
+  </div>
 </template>
 
 <script>
-import products from "./data/products";
-import InputExample from "./components/InputExample.vue";
-import VueDongsan from "./components/VueDongsan.vue";
+import products from "../data/products";
 
 export default {
   name: "App",
@@ -26,11 +40,6 @@ export default {
     increase(index) {
       this.products[index].report++;
     },
-  },
-
-  components: {
-    InputExample,
-    VueDongsan,
   },
 };
 </script>
