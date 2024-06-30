@@ -23,8 +23,7 @@
 </template>
 
 <script>
-// import products from "./data/products";
-import products from "../public/data/products";
+import products from "./data/products";
 import InputExample from "./components/InputExample.vue";
 
 export default {
