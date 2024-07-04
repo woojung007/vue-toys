@@ -1,36 +1,21 @@
 <template>
-  <InputExample />
-
-  <VueDongsan />
+  <!-- <InputExample /> -->
+  <!-- <VueDongsan /> -->
+  <TodoApp />
 </template>
 
 <script>
-import products from "./data/products";
 import InputExample from "./components/InputExample.vue";
 import VueDongsan from "./components/VueDongsan.vue";
+import TodoApp from "./components/data-binding/TodoApp.vue";
 
 export default {
   name: "App",
 
-  data() {
-    return {
-      isModalOpen: false,
-
-      menus: ["Home", "Shop", "About"],
-
-      products,
-    };
-  },
-
-  methods: {
-    increase(index) {
-      this.products[index].report++;
-    },
-  },
-
   components: {
     InputExample,
     VueDongsan,
+    TodoApp,
   },
 };
 </script>
@@ -42,42 +27,5 @@ body {
 
 div {
   box-sizing: border-box;
-}
-
-.black-bg {
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 20px;
-}
-
-.white-bg {
-  width: 100%;
-  background: white;
-  border-radius: 8px;
-  padding: 20px;
-}
-
-.menu {
-  background: darkslateblue;
-  padding: 15px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-
-  > a {
-    color: white;
-    padding: 10px;
-  }
-}
-
-.product {
-  margin-bottom: 20px;
-}
-
-.room-img {
-  height: 200px;
 }
 </style>
